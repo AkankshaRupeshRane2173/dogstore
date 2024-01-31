@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+os.path.dirname(os.path.realpath(__name__))
 # import razorpay
 
 
@@ -149,3 +150,4 @@ RAZOR_KEY_SECRET = "gog6lT2ASzdhNV952EmofoCa"
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
