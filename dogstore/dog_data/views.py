@@ -12,6 +12,16 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseBadRequest
 from .forms import ImageUploadForm
+import git
+
+def get_git_root(path):
+
+        git_repo = git.Repo(path, search_parent_directories=True)
+        git_root = git_repo.git.rev_parse("--show-toplevel")
+        print git_root
+
+if __name__ == "__main__":
+    get_git_root('C:\Users\admin\Desktop\Dj-Dogstore\dogstore\dog_data\templates\index.html')
 
 
 # import pkg_resources
