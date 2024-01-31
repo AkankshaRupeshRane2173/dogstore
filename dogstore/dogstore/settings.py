@@ -12,8 +12,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import git
 os.path.dirname(os.path.realpath(__name__))
 # import razorpay
+
+def get_git_root(path):
+
+        git_repo = git.Repo(path, search_parent_directories=True)
+        git_root = git_repo.git.rev_parse("--show-toplevel")
+        print git_root
+
+if __name__ == "__main__":
+    get_git_root('C:\Users\admin\Desktop\Dj-Dogstore\dogstore\dog_data\templates\index.html')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
