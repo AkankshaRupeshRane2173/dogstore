@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% comment %} {{showvalues}} {% endcomment %}
+    
+    {% for d in showvalues %}
+    <tr>
+        {% comment %} <td>{{d.ID}}</td> {% endcomment %}
+        <td>{{d.name}}</td>
+        <td>{{d.email}}</td>
+        <td> <a href="/edit?name={{d.name}}">Edit Record</a>
+            <a href="/delete?name={{d.name}}">Delete Record</a>
+        </td>
+        <br>
+        <br>
+      
+    </tr>
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Information Form</title>
+</head>
+<body>
+
+<h2>Pet Information Form</h2>
+
+<form action="/addpet" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="pet_id">pet_id:</label>
+    <input type="text" id="pet_id" name="pet_id" required>
+    <br>
+    <br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <br>
+
+
+    <label for="breed">Breed:</label>
+    <input type="text" id="breed" name="breed" required>
+    <br>
+    <br>
+
+
+    <label for="sex">Sex:</label>
+    <select id="sex" name="sex" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br>
+    <br>
+
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" required>
+    <br>
+    <br>
+
+
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+    <br>
+    <br>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

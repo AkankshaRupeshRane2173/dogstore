@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+    
+</head>
+
+<body>
+
+<h2>Pet List </h2>
+
+<form action="/updatedrecord" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% for x in pets %}
+    <label for="pet_id">pet_id:</label>
+    <input type="text" id="pet_id" name="pet_id" value={{x.pet_id}}>
+    <br>
+    <br>
+
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ x.name }}"required>
+    <br>
+    <br>
+
+
+    <label for="breed">Breed:</label>
+    <input type="text" id="breed" name="breed" value="{{ x.breed }}" required>
+    <br>
+    <br>
+
+    <label for="sex">sex:</label>
+    <input type="text" id="sex" name="sex" value="{{ x.sex }}" required>
+    
+    <br>
+    <br>
+
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color" value="{{ x.color }}"required>
+    <br>
+    <br>
+
+    <td>
+        {% if x.image %}
+            <img src="{{ x.image.url }}" alt="{{ x.name }} Image" width="150" >
+        {% else %}
+            No Image
+        {% endif %}
+    </td>
+
+    <br>
+    <br>
+    {% endfor %}
+
+
+    <input type="submit" value="Update Details">
+</form>
+
+
+</body>
+</html>

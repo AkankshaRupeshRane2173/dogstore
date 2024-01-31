@@ -1,0 +1,142 @@
+{% extends "main.html" %}
+
+{% block title %}Home -{% endblock title %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <div class="container col-xxl-10 p-4">
+    <div class="row flex-lg-row-reverse align-items-center g-5 my-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="\static\images\dog.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
+          loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-5 ">Welcome To The Dogstore</h1>
+        <p class="lead">Dogs, our loyal and loving companions, bring joy and comfort to our lives. Their diversity in
+          breeds and personalities allows them to fit seamlessly into our families and daily routines. With their
+          intelligence and adaptability, dogs can be our faithful friends and skilled working partners. Their unique
+          ability to communicate and their unwavering loyalty make them truly exceptional creatures.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 mt-5">Get a Dog</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4 mt-5">view Gallery</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row featurette p-4 " style=margin-left:30px>
+    <div class="col-md-7 order-md-2 ms-5">
+      <h2 class="featurette-heading fw-normal lh-3 text-center">Meet Our Founder !!<span
+          class="text-body-secondary"></span></h2>
+      <br></br>
+      <p class="lead text-center ">Omkar Shete, the visionary founder of our dog selling company, has a remarkable story
+        of passion and dedication to the canine world. With a lifelong love for dogs, Omkar embarked on a mission to
+        create a unique and ethical dog selling platform. His extensive experience in breeding and dog care has shaped
+        our company's commitment to excellence.
+        <br></br>
+
+        Omkar Shete's expertise extends to responsible breeding practices, ensuring that every pup in our care is
+        healthy, well-socialized, and comes from reputable bloodlines. His devotion to the welfare of dogs is evident in
+        our comprehensive healthcare and training programs.
+        <br></br>
+
+      </p>
+    </div>
+    <div class="col-md-4 p-4">
+      <img src="\static\images\Founder.jpg" alt="Founder.jpg" style="width:400px, height:300px" class="img-fluid">
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
+    <div class="col">
+      <div class="card shadow-sm ">
+        <img src="\static\images\labpuppy.jpg" alt="lab" style="width:520px; height:350px;" class="img-fluid">
+        <div class="card-body">
+          <p class="card-text ">Labradors, often simply referred to as "Labs," are one of the most popular dog breeds
+            globally. They are known for their friendly and outgoing nature, as well as their intelligence and
+            versatility in various roles, from family pets to service and working dogs.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Get a Lab</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">see moreEdit</button>
+            </div>
+            <small class="text-body-secondary">20 in stock</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-sm ">
+        <img src="\static\images\germanshephard.jpg" alt="german.jpg" style="width:520px; height:350px;" class="img-fluid ">
+        <div class="card-body">
+          <p class="card-text">The German Shepherd is a highly intelligent and versatile breed known for its loyalty and
+            protective nature. They excel in roles such as police work, search and rescue, and make wonderful family
+            pets due to their loyalty and trainability.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Get a shephard</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">see more</button>
+            </div>
+            <small class="text-body-secondary">12 in stock</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow">
+        <img src="\static\images\pug.jpg" alt="pug.jpg" style="width:520px;  height:350px; " class="img-fluid ">
+        <div class="card-body">Pugs are charming small breed dogs known for their distinctive wrinkled faces and
+          expressive, adorable eyes. They have friendly and affectionate personalities, making them delightful
+          companions for families and individuals alike.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Get a pug</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">see more</button>
+            </div>
+            <small class="text-body-secondary">8 in stock</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+  </div>
+
+  <h3 class="head6">Our Location</h3>
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7893219110474!2d73.05430657159683!3d19.029003014054858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c2413792ce1f%3A0xab58acbd0293fa2b!2sSector%203%2C%20Belpada%2C%20Kharghar%2C%20Navi%20Mumbai%2C%20Maharashtra%20410210!5e0!3m2!1sen!2sin!4v1693233860248!5m2!1sen!2sin"
+      width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+
+  <h3 class="head8 " id="contact">Let's connect on</h3>
+  <div class="social">
+    <a href="https://wa.me/9321781879">
+      <img src="\static\images\whatsapp-logo-transparent-free-png.webp"  style="width:100px; height:100px; margin-left:320px;margin-top:20px;" alt="whatsapp">
+    </a>
+    <a href="https://instagram.com/royalrevolution7778?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D">
+      <img src="\static\images\instagram.png" style="width:80px; height:80px;  margin-left:320px;margin-top:20px;" alt="instagram">
+    </a>
+    <a href="https://www.facebook.com/royalrevolution2/">
+      <img src="\static\images\facebook logo.avif"  style="width:100px; height:100px; margin-left:320px;margin-top:20px;" alt="facebook">
+    </a>
+
+  </div>
+</body>
+
+
+
+</html>
+
+{% endblock body %}

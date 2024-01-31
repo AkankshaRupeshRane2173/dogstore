@@ -1,0 +1,109 @@
+{% extends "main.html" %}
+
+{% block title %}pricing -{% endblock title %}
+
+{% block body %}<div class="container py-3">
+    <header>
+      
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
+        <p class="fs-5 text-body-secondary">
+          At our dog selling company, we are committed to transparent and fair pricing. We believe in connecting you with your perfect furry friend while ensuring that the process is as straightforward as possible. Our pricing reflects the care, quality, and dedication that go into raising and nurturing each of our dogs. We offer a range of breeds to fit various budgets, and our pricing is inclusive of initial vaccinations, health check-ups, and essential puppy care items.
+          <br></br>
+          We understand the importance of bringing a new member into your family, and our competitive prices ensure that you can find the ideal companion without compromising on quality or affordability. Your satisfaction and your future pet's well-being are our top priorities, and our transparent pricing is a testament to our commitment to providing you with a joyful and seamless experience.</p>
+      </div>
+    </header>
+  
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Labrador</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">Rs 25,000<small class="text-body-secondary fw-light"></small></h1>
+              {% comment %} <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+              </ul> {% endcomment %}
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get Labrador</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">German shephard</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">Rs 50,000<small class="text-body-secondary fw-light"></small></h1>
+              {% comment %} <ul class="list-unstyled mt-3 mb-4">
+                <li>20 users included</li>
+                <li>10 GB of storage</li>
+                <li>Priority email support</li>
+                <li>Help center access</li>
+              </ul> {% endcomment %}
+              <button type="button" class="w-100 btn btn-lg btn-primary">Get German shephard</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Pug</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">Rs 45,000<small class="text-body-secondary fw-light"></small></h1>
+              {% comment %} <ul class="list-unstyled mt-3 mb-4">
+                <li>30 users included</li>
+                <li>15 GB of storage</li>
+                <li>Phone and email support</li>
+                <li>Help center access</li>
+              </ul> {% endcomment %}
+              <button type="button" class="w-100 btn btn-lg btn-primary" id="pay-btn">Get a pug</button>
+            </div>
+          </div>
+        </div>
+      </div>  
+  
+      
+      </div>
+    </main>
+      
+  </div>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+       
+      // Enter the Key ID generated from the Dashboard
+      key: "{{ razorpay_merchant_key }}", 
+       
+      // Amount is in currency subunits.
+      // Default currency is INR. Hence, 
+      // 50000 refers to 50000 paise
+      amount: "{{ razorpay_amount }}", 
+      currency: "{{ currency }}",
+       
+      // Your/store name.
+      name: "Dj Razorpay", 
+       
+      // Pass the `id` obtained in the response of Step 1
+      order_id: "{{ razorpay_order_id }}", 
+      callback_url: "{{ callback_url }}",
+    };
+     
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+     
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>
+
+  {% endblock body %}
+  
